@@ -10,13 +10,21 @@
     <title>Hello Vue!</title>
 </head>
 
+
+<style>
+    .red {
+        color: red;
+    }
+</style>
+
 <body>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <script src="https://unpkg.com/vue@3"></script>
     <div id="app">
-        <h1>{{ message }}</h1>
-        <img :src="photo" alt="">
+        <div class="container">
+            <h1 :class="classNames">{{ message }}</h1>
+            <img :src="photo" alt="">
+        </div>
     </div>
 
     <script>
@@ -26,7 +34,8 @@
             data() {
                 return {
                     message: 'Hello Tutors!',
-                    photo: "https://cdn-3.motorsport.com/images/mgl/01WlBxeY/s1200/ferrari-sf-24.webp"
+                    photo: "https://cdn-3.motorsport.com/images/mgl/01WlBxeY/s1200/ferrari-sf-24.webp",
+                    classNames: "red text-center"
                 }
             }
         }).mount('#app')
